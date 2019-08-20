@@ -1,6 +1,13 @@
-# epub-gen - a library to make EPUBs from HTML
+# epub-gen-funstory
 
-[![Join the chat at https://gitter.im/cyrilis/epub-gen](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cyrilis/epub-gen?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+a library to make EPUBs from HTML
+
+Forked from `https://github.com/cyrilis/epub-gen.git`.
+
+Most of this code was written by [cyrilis](https://github.com/cyrilis), my work was mostly just repackaging to a customized npm package.
+
+[![npm version](https://img.shields.io/npm/v/epub-gen-funstory.svg?style=flat-square)](https://www.npmjs.com/package/epub-gen-funstory)
+[![npm downloads](https://img.shields.io/npm/dm/epub-gen-funstory.svg?style=flat-square)](https://www.npmjs.com/package/epub-gen-funstory)
 
 Generate EPUB books from HTML with simple API in Node.js.
 
@@ -9,7 +16,6 @@ Generate EPUB books from HTML with simple API in Node.js.
 This epub library will generate temp html and download images in your DOMs, then generate the epub book you want.
 
 It's very fast, except the time to download images from the web.
-
 
 ## Usage
 
@@ -126,33 +132,8 @@ If you don't want pass the output pass the output path as the second argument, y
 
 ------
 
-## Demo Preview:
+## Demo Preview
 
 ![Demo Preview](demo_preview.png?raw=true)
 
 _From Lewis Carroll "Alice's Adventures in Wonderland", based on text at https://www.cs.cmu.edu/~rgs/alice-table.html and images from http://www.alice-in-wonderland.net/resources/pictures/alices-adventures-in-wonderland._
-
-## License
-
-(The MIT License)
-
-Copyright (c) 2015 Cyril Hou &lt;houshoushuai@gmail.com&gt;
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
