@@ -15,6 +15,14 @@
     </docAuthor>
     <navMap>
         <% var _index = 0; %>
+        <% if(locals.cover) { %>
+        <navPoint id="cover" playOrder="<%= _index++ %>" class="cover">
+            <navLabel>
+                <text><%= tocTitle %></text>
+            </navLabel>
+            <content src="cover.xhtml" />
+        </navPoint>
+        <% } %>
         <% content.forEach(function(content, index){ %>
             <% if(!content.excludeFromToc && content.beforeToc){ %>
                 <navPoint id="content_<%= index %>_<%= content.id %>" playOrder="<%= _index++ %>" class="chapter">
@@ -25,14 +33,12 @@
                 </navPoint>
             <% } %>
         <% }) %>
-
         <navPoint id="toc" playOrder="<%= _index++ %>" class="chapter">
             <navLabel>
                 <text><%= tocTitle %></text>
             </navLabel>
             <content src="toc.xhtml"/>
         </navPoint>
-
         <% content.forEach(function(content, index){ %>
             <% if(!content.excludeFromToc && !content.beforeToc){ %>
                 <navPoint id="content_<%= index %>_<%= content.id %>" playOrder="<%= _index++ %>" class="chapter">

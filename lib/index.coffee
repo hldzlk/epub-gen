@@ -207,7 +207,7 @@ class EPub
         </head>
       <body>
       """
-      data += if content.title and self.options.appendChapterTitles then "<h1>#{entities.encodeXML(content.title)}</h1>" else ""
+      data += if content.title and self.options.appendChapterTitles then "<h1 class=\"h1\">#{entities.encodeXML(content.title)}</h1>" else ""
       data += if content.title and content.author and content.author.length then "<p class='epub-author'>#{entities.encodeXML(content.author.join(", "))}</p>" else ""
       data += if content.title and content.url then "<p class='epub-link'><a href='#{content.url}'>#{content.url}</a></p>" else ""
       data += "#{content.data}</body></html>"
@@ -243,14 +243,19 @@ class EPub
       generateDefer.reject(new Error('Custom file to HTML toc template not found.'))
       return generateDefer.promise
 
+    # add book cover page
+    coverPath = path.resolve(__dirname, "../templates/epub#{self.options.version}/cover.xhtml.ejs")
+
     Q.all([
       Q.nfcall ejs.renderFile, opfPath, self.options
       Q.nfcall ejs.renderFile, ncxTocPath, self.options
       Q.nfcall ejs.renderFile, htmlTocPath, self.options
-    ]).spread (data1, data2, data3)->
+      Q.nfcall ejs.renderFile, coverPath, self.options
+    ]).spread (data1, data2, data3, data4)->
       fs.writeFileSync(path.resolve(self.uuid , "./OEBPS/content.opf"), data1)
       fs.writeFileSync(path.resolve(self.uuid , "./OEBPS/toc.ncx"), data2)
       fs.writeFileSync(path.resolve(self.uuid, "./OEBPS/toc.xhtml"), data3)
+      fs.writeFileSync(path.resolve(self.uuid, "./OEBPS/cover.xhtml"), data4)
       generateDefer.resolve()
     , (err)->
       console.error arguments

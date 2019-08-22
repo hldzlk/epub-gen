@@ -21,12 +21,12 @@ It's very fast, except the time to download images from the web.
 
 Install the lib and add it as a dependency (recommended), run on your project dir:
 
-	npm install epub-gen --save
+	npm install epub-gen-funstory --save
 
 Then put this in your code:
 
 ```javascript
-    const Epub = require("epub-gen");
+    const Epub = require("epub-gen-funstory");
 
     new Epub(option [, output]).promise.then(
         () => console.log("Ebook Generated Successfully!"),
@@ -101,7 +101,7 @@ If you don't want pass the output pass the output path as the second argument, y
 ## Demo Code:
 
 ```javascript
-    const Epub = require("epub-gen");
+    const Epub = require("epub-gen-funstory");
 
     const option = {
         title: "Alice's Adventures in Wonderland", // *Required, title of the book.
