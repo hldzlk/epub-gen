@@ -1,6 +1,6 @@
 {
   "name": "epub-gen-funstory",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A library to generate EPUB from HTML",
   "main": "index.js",
   "scripts": {
